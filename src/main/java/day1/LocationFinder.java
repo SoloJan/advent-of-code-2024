@@ -30,6 +30,7 @@ public class LocationFinder {
         var right = leftAndRightList.getRight();
         long similarityScore = 0L;
         var similarities = new HashMap<Integer, Integer>();
+
         for (var rightValue : right) {
             similarities.put(rightValue, similarities.getOrDefault(rightValue, 0) + 1);
         }
@@ -50,5 +51,5 @@ public class LocationFinder {
         }
         return new Pair<>(left, right);
     }
-    
+
 }

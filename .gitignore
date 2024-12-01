@@ -3,3 +3,6 @@
 
 # Ignore Maven target directory
 target/
+
+# Ignore the resources, so the inputs stay hidden
+src/main/resources/*
