@@ -12,7 +12,6 @@ class LocationFinderTest {
     @Test
     void testSmallestDistance(){
         var result= LocationFinder.calculateSmallestDistance("day1/input.txt");
-
         assertEquals(  11, result);
     }
 
