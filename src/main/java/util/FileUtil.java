@@ -16,6 +16,16 @@ import java.util.List;
 public class FileUtil {
 
 
+    public static String readFileToSingleString(String fileName){
+        List<String> lines = readFilePerLine(fileName);
+        StringBuilder sb = new StringBuilder();
+        for(String line: lines){
+            sb.append(line);
+        }
+        return sb.toString();
+    }
+
+
     /**
      *
      * @param fileName
