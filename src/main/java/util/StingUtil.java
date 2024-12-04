@@ -28,6 +28,28 @@ public class StingUtil {
         return matches;
     }
 
+    public static int countAllMathes(String input, Pattern pattern){
+        Matcher matcher = pattern.matcher(input);
+        int count = 0;
+        while (matcher.find()) {
+            count ++;
+        }
+        return count;
+    }
+
+    public static int countAllMathes(String input, String sequenceToMatch){
+        var pattern = Pattern.compile(sequenceToMatch);
+        return countAllMathes(input, pattern);
+    }
+
+    public static char[][] toCharArray(List<String> rows){
+        char[][] charArray = new char[rows.size()][rows.getFirst().length()];
+        for(int row = 0; row <rows.size(); row++){
+            charArray[row] = rows.get(row).toCharArray();
+        }
+        return charArray;
+    }
+
 
     public static List<String> findAllMathes(String input, String sequenceToMatch){
         var pattern = Pattern.compile(sequenceToMatch);
