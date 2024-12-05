@@ -126,5 +126,5 @@ public class WordSearcher {
     private static boolean containsSandM(List<Character> diagonal1) {
         return diagonal1.contains('S') && diagonal1.contains('M');
     }
-    
+
 }
