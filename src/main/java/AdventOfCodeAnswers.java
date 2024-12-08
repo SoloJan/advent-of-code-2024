@@ -1,11 +1,11 @@
-import java.time.LocalDateTime;
-
-import static Day6.Day6Solver.solveProblem1;
-import static Day6.Day6Solver.solveProblem2;
-import static Day7.EquationSolver.sumOfSolvableEquations;
-import static Day7.EquationSolver.sumOfSolvableEquationsWithConcatenation;
-import static Day8.AntinodesFinder.findAntinodes;
-import static Day8.AntinodesFinder.findAntinodesWithResonanceEffect;
+import static day6.GuardSpy.findRouteOfGuard;
+import static day6.GuardSpy.blockGuard;
+import static day7.EquationSolver.sumOfSolvableEquations;
+import static day7.EquationSolver.sumOfSolvableEquationsWithConcatenation;
+import static day8.AntinodesFinder.findAntinodes;
+import static day8.AntinodesFinder.findAntinodesWithResonanceEffect;
+import static day9.Day9Solver.solveProblem1;
+import static day9.Day9Solver.solveProblem2;
 import static day1.LocationFinder.calculateSmallestDistance;
 import static day1.LocationFinder.similarityScore;
 import static day2.ReportChecker.countSafeRecords;
@@ -30,12 +30,14 @@ public class AdventOfCodeAnswers {
         System.out.println("The answer to day 4, exercise 2  = " + countOfXmasCrosses("day4/input.txt"));
         System.out.println("The answer to day 5, exercise 1  = " + sumOfValidInstructions("day5/input.txt"));
         System.out.println("The answer to day 5, exercise 2  = " + sumOfInvalidInstructions("day5/input.txt"));
-        System.out.println("The answer to day 6, exercise 1  = " + solveProblem1("day6/input.txt"));
-        System.out.println("The answer to day 6, exercise 2  = " + solveProblem2("day6/input.txt"));
+        System.out.println("The answer to day 6, exercise 1  = " + findRouteOfGuard("day6/input.txt"));
+        System.out.println("The answer to day 6, exercise 2  = " + blockGuard("day6/input.txt"));
         System.out.println("The answer to day 7, exercise 1  = " + sumOfSolvableEquations("day7/input.txt"));
         System.out.println("The answer to day 7, exercise 2  = " + sumOfSolvableEquationsWithConcatenation("day7/input.txt"));
         System.out.println("The answer to day 8, exercise 1  = " + findAntinodes("day8/input.txt"));
         System.out.println("The answer to day 8, exercise 2  = " + findAntinodesWithResonanceEffect("day8/input.txt"));
+        System.out.println("The answer to day 9, exercise 1  = " + solveProblem1("day9/input.txt"));
+        System.out.println("The answer to day 9, exercise 2  = " + solveProblem2("day9/input.txt"));
 
     }
 }

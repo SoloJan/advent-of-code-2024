@@ -1,4 +1,4 @@
-package Day6;
+package day6;
 
 import common.Coordinate;
 import common.Direction;
@@ -11,16 +11,16 @@ import static util.CollectionUtil.isOutOfGrid;
 import static util.FileUtil.readFilePerLine;
 import static util.StingUtil.toCharArray;
 
-public class Day6Solver {
+public class GuardSpy {
 
-    public static long solveProblem1(String fileName) {
+    public static long findRouteOfGuard(String fileName) {
         var lines = readFilePerLine(fileName);
         var grid = toCharArray(lines);
         var startMove = findStart(grid);
         return findVisitedCoordinates(grid, startMove).size();
     }
 
-    public static long solveProblem2(String fileName) {
+    public static long blockGuard(String fileName) {
         var lines = readFilePerLine(fileName);
         var grid = toCharArray(lines);
         var startMove = findStart(grid);
@@ -81,21 +81,21 @@ public class Day6Solver {
                 return coordinatesVisited;
             }
             var characterAtNextMove = grid[nextMove.getCoordinate().getRow()][nextMove.getCoordinate().getColumn()];
-            if (characterAtNextMove == '#') {
-                nextMove = currentMove.nextMove(true);
+            var proposedDirection = currentMove.getDirection();
+            while (characterAtNextMove == '#') {
+                proposedDirection = turnRight(proposedDirection);
+                nextMove = new Move(currentMove.getNextCoordinate(proposedDirection), proposedDirection);
                 if (isOutOfGrid(nextMove.getCoordinate(), grid)) {
                     return coordinatesVisited;
                 }
+                characterAtNextMove = grid[nextMove.getCoordinate().getRow()][nextMove.getCoordinate().getColumn()];
             }
             coordinatesVisited.add(nextMove.getCoordinate());
             currentMove = nextMove;
             grid[currentMove.getCoordinate().getRow()][currentMove.getCoordinate().getColumn()] = 'X';
         }
     }
-
-
-
-
+    
     public static Move findStart(char[][] grid) {
         for (int row = 0; row < grid.length; row++) {
             for (int colum = 0; colum < grid[0].length; colum++) {

@@ -1,9 +1,9 @@
-package Day7;
+package day7;
 
 import org.junit.jupiter.api.Test;
 
-import static Day7.EquationSolver.sumOfSolvableEquations;
-import static Day7.EquationSolver.sumOfSolvableEquationsWithConcatenation;
+import static day7.EquationSolver.sumOfSolvableEquations;
+import static day7.EquationSolver.sumOfSolvableEquationsWithConcatenation;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EquationSolverTest {

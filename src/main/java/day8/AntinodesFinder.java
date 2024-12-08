@@ -1,4 +1,4 @@
-package Day8;
+package day8;
 
 import common.Coordinate;
 
@@ -20,7 +20,7 @@ public class AntinodesFinder {
                 foundAntinodes.add(antinodeAbove);
             }
             if (!isOutOfGrid(antinodeBelow, grid)) {
-                foundAntinodes.add(antinodeBelow)
+                foundAntinodes.add(antinodeBelow);
             };
         });
 
@@ -60,7 +60,7 @@ public class AntinodesFinder {
 
                 for (int row2 = row + 1; row2 < grid.length; row2++) {
                     for (int column2 = 0; column2 < grid[0].length; column2++) {
-                        var otherCharacter = grid[row2][column2]
+                        var otherCharacter = grid[row2][column2];
                         if (otherCharacter == character) {
                             int rowDistance = row2 - row;
                             int columnDistance = column2 - column;

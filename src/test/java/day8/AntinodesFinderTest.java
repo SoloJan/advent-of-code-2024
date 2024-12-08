@@ -1,10 +1,9 @@
-package Day8;
+package day8;
 
 import org.junit.jupiter.api.Test;
 
-import static Day7.EquationSolver.sumOfSolvableEquations;
-import static Day8.AntinodesFinder.findAntinodes;
-import static Day8.AntinodesFinder.findAntinodesWithResonanceEffect;
+import static day8.AntinodesFinder.findAntinodes;
+import static day8.AntinodesFinder.findAntinodesWithResonanceEffect;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AntinodesFinderTest {

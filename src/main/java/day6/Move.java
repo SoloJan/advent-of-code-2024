@@ -1,4 +1,4 @@
-package Day6;
+package day6;
 
 import common.Coordinate;
 import common.Direction;
