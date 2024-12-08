@@ -24,8 +24,5 @@ public class PrintInstructionComparator implements Comparator<Integer> {
         return 0;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return false;
-    }
+
 }

@@ -1,5 +1,9 @@
+import java.time.LocalDateTime;
+
 import static Day6.Day6Solver.solveProblem1;
 import static Day6.Day6Solver.solveProblem2;
+import static Day7.EquationSolver.sumOfSolvableEquations;
+import static Day7.EquationSolver.sumOfSolvableEquationsWithConcatenation;
 import static day1.LocationFinder.calculateSmallestDistance;
 import static day1.LocationFinder.similarityScore;
 import static day2.ReportChecker.countSafeRecords;
@@ -26,5 +30,8 @@ public class AdventOfCodeAnswers {
         System.out.println("The answer to day 5, exercise 2  = " + sumOfInvalidInstructions("day5/input.txt"));
         System.out.println("The answer to day 6, exercise 1  = " + solveProblem1("day6/input.txt"));
         System.out.println("The answer to day 6, exercise 2  = " + solveProblem2("day6/input.txt"));
+        System.out.println("The answer to day 7, exercise 1  = " + sumOfSolvableEquations("day7/input.txt"));
+        System.out.println("The answer to day 7, exercise 2  = " + sumOfSolvableEquationsWithConcatenation("day7/input.txt"));
+
     }
 }

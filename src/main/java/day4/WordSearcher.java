@@ -3,6 +3,9 @@ package day4;
 import java.util.ArrayList;
 import java.util.List;
 
+import static util.CollectionUtil.getDiagonalLeftToRight;
+import static util.CollectionUtil.getDiagonalRightToLeft;
+import static util.CollectionUtil.getVerticalLines;
 import static util.FileUtil.readFilePerLine;
 import static util.StingUtil.countAllMathes;
 import static util.StingUtil.toCharArray;
@@ -55,67 +58,7 @@ public class WordSearcher {
 
 
 
-    /**
-     * Makes a single string of every diagonal which goes from top left, to bottom right, and adds it to a list
-     */
-    private static List<String> getDiagonalLeftToRight(char[][] grid){
-        List<String> lines = new ArrayList<>();
-        for(int colShift = 0; colShift < grid.length; colShift++) {
-            StringBuilder sb = new StringBuilder();
-            for (int row = 0; row  + colShift < grid[0].length; row++) {
-                sb.append(grid[row][row + colShift]);
-            }
-            lines.add(sb.toString());
-        }
-        for(int rowShift = 1; rowShift  < grid.length; rowShift++) {
-            StringBuilder sb = new StringBuilder();
-            for(int col = 0; col  + rowShift < grid.length; col++) {
-                sb.append(grid[col + rowShift][col]);
-            }
-            lines.add(sb.toString());
-        }
-        return lines;
-    }
 
-    /**
-     * Makes a single string of every diagonal which goes from top right, to bottom left, and adds it to a list
-     */
-    private static List<String> getDiagonalRightToLeft(char[][] grid){
-        List<String> lines = new ArrayList<>();
-        for(int colShift = 0; colShift < grid.length; colShift++) {
-            StringBuilder sb = new StringBuilder();
-            for (int row = grid.length -1; row >= 0; row--) {
-                var col = (grid.length - 1 - row) + colShift;
-                if(col < grid.length) {
-                    sb.append(grid[row][col]);
-                }
-            }
-            lines.add(sb.toString());
-        }
-        for(int rowShift = 1; rowShift  < grid.length; rowShift++) {
-            StringBuilder sb = new StringBuilder();
-            for(int col = 0; col  < grid.length; col++) {
-                var row = grid.length - 1 -rowShift - col;
-                if(row >= 0) {
-                    sb.append(grid[row][col]);
-                }
-            }
-           lines.add(sb.toString());
-        }
-        return lines;
-    }
-    
-    private static List<String> getVerticalLines(char[][] grid){
-        List<String> lines = new ArrayList<>();
-        for(int col = 0; col < grid[0].length; col++){
-            StringBuilder sb = new StringBuilder();
-            for(int row =0; row < grid.length; row++){
-                sb.append(grid[row][col]);
-            }
-            lines.add(sb.toString());
-        }
-        return lines;
-    }
     
     private static int countXMASS(String input){
         var reversedInput = new StringBuilder(input).reverse().toString();
