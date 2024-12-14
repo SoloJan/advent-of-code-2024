@@ -2,7 +2,7 @@ package common;
 
 public enum Direction {
 
-    UP, DOWN, LEFT, RIGHT;
+    UP, DOWN, LEFT, RIGHT, UPRIGHT, UPLEFT, DOWNRIGHT, DOWNLEFT;
 
 
     public static Direction turnRight(Direction currentDirection){
@@ -11,6 +11,23 @@ public enum Direction {
             case DOWN -> LEFT;
             case LEFT -> UP;
             case RIGHT -> DOWN;
+            case UPRIGHT -> DOWNRIGHT;
+            case DOWNRIGHT -> DOWNLEFT;
+            case DOWNLEFT -> UPLEFT;
+            case UPLEFT -> UPRIGHT;
+        };
+    }
+
+    public static Coordinate getNextCoordinate(Coordinate coordinate, Direction direction){
+        return switch (direction){
+            case UP -> new Coordinate(coordinate.getRow() - 1, coordinate.getColumn());
+            case DOWN -> new Coordinate(coordinate.getRow() + 1, coordinate.getColumn());
+            case LEFT -> new Coordinate(coordinate.getRow(), coordinate.getColumn() -1);
+            case RIGHT -> new Coordinate(coordinate.getRow(), coordinate.getColumn() + 1);
+            case UPRIGHT -> new Coordinate(coordinate.getRow() -1, coordinate.getColumn() + 1);
+            case DOWNRIGHT -> new Coordinate(coordinate.getRow() + 1, coordinate.getColumn() +1);
+            case DOWNLEFT -> new Coordinate(coordinate.getRow() + 1, coordinate.getColumn() -1);
+            case UPLEFT -> new Coordinate(coordinate.getRow() - 1, coordinate.getColumn() -1);
         };
     }
 
@@ -20,6 +37,7 @@ public enum Direction {
             case DOWN -> RIGHT;
             case LEFT -> DOWN;
             case RIGHT -> RIGHT;
+            default -> throw new RuntimeException("Not implemented ");
         };
     }
 

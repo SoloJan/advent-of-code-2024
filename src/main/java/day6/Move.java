@@ -34,6 +34,7 @@ public class Move {
             case DOWN -> LEFT;
             case LEFT -> UP;
             case RIGHT -> DOWN;
+            default -> throw new RuntimeException("not implemented");
         };
     }
 
@@ -49,6 +50,7 @@ public class Move {
         case DOWN -> new Coordinate(coordinate.getRow() + 1, coordinate.getColumn());
         case LEFT -> new Coordinate(coordinate.getRow(), coordinate.getColumn() -1);
         case RIGHT -> new Coordinate(coordinate.getRow(), coordinate.getColumn() + 1);
+            default -> throw new RuntimeException("Not implemented");
         };
     }
 

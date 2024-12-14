@@ -1,3 +1,10 @@
+import static day10.Day10Solver.findTrailPads;
+import static day10.Day10Solver.findDistinctTrailPads;
+import static day11.StoneCounter.countStones;
+import static day12.AreaCalculator.calculateFencePrice;
+import static day12.AreaCalculator.calculateFencePriceBasedOnSides;
+import static day13.PrizeWinner.calculateTokensSpend;
+import static day13.PrizeWinner.calculateTokensSpendWithUnitConversion;
 import static day6.GuardSpy.findRouteOfGuard;
 import static day6.GuardSpy.blockGuard;
 import static day7.EquationSolver.sumOfSolvableEquations;
@@ -38,5 +45,13 @@ public class AdventOfCodeAnswers {
         System.out.println("The answer to day 8, exercise 2  = " + findAntinodesWithResonanceEffect("day8/input.txt"));
         System.out.println("The answer to day 9, exercise 1  = " + compressFiles("day9/input.txt"));
         System.out.println("The answer to day 9, exercise 2  = " + compressFilesKeepingFileIntact("day9/input.txt"));
+        System.out.println("The answer to day 10, exercise 1  = " + findTrailPads("day10/input.txt"));
+        System.out.println("The answer to day 10, exercise 2  = " + findDistinctTrailPads("day10/input.txt"));
+     //   System.out.println("The answer to day 11, exercise 1  = " + countStones( "5 62914 65 972 0 805922 6521 1639064", 25));
+      //  System.out.println("The answer to day 11, exercise 1  = " + countStones( "5 62914 65 972 0 805922 6521 1639064", 75));
+        System.out.println("The answer to day 12, exercise 1  = " + calculateFencePrice("day12/input.txt"));
+        System.out.println("The answer to day 12, exercise 2  = " + calculateFencePriceBasedOnSides("day12/input.txt"));
+        System.out.println("The answer to day 13, exercise 1  = " + calculateTokensSpend("day13/input.txt"));
+        System.out.println("The answer to day 13, exercise 2  = " + calculateTokensSpendWithUnitConversion("day13/input.txt"));
     }
 }

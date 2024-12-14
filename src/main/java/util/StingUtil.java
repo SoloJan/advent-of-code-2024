@@ -42,6 +42,20 @@ public class StingUtil {
         return countAllMathes(input, pattern);
     }
 
+    public static int[][] toIntArray(List<String> rows){
+        int[][] intArray = new int[rows.size()][rows.getFirst().length()];
+        for(int row = 0; row <rows.size(); row++){
+            var charRow = rows.get(row).toCharArray();
+            var intRow = new int[charRow.length];
+            for(int column = 0; column < charRow.length; column++){
+                intRow[column] = Integer.parseInt(String.valueOf(charRow[column]));
+            }
+
+            intArray[row] = intRow;
+        }
+        return intArray;
+    }
+
     public static char[][] toCharArray(List<String> rows){
         char[][] charArray = new char[rows.size()][rows.getFirst().length()];
         for(int row = 0; row <rows.size(); row++){

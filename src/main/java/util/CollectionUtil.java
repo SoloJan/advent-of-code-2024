@@ -12,12 +12,21 @@ public class CollectionUtil {
             StringBuilder sb = new StringBuilder();
             for (int colum = 0; colum < grid[0].length; colum++) {
                 var character = chars[colum];
-                sb.append(character);
+                if(character == 'A') {
+                    sb.append(character);
+                }
+                else sb.append(".");
             }
             System.out.println(sb.toString());
         }
     }
 
+
+    public static boolean isOutOfGrid(Coordinate coordinate, int[][] grid) {
+        var outOfRow = coordinate.getRow() < 0 || coordinate.getRow() > (grid.length - 1);
+        var outOfColumn = coordinate.getColumn() < 0 || coordinate.getColumn() > (grid.length - 1);
+        return outOfRow || outOfColumn;
+    }
     public static boolean isOutOfGrid(Coordinate coordinate, char[][] grid) {
         var outOfRow = coordinate.getRow() < 0 || coordinate.getRow() > (grid.length - 1);
         var outOfColumn = coordinate.getColumn() < 0 || coordinate.getColumn() > (grid.length - 1);
